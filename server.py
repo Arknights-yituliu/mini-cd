@@ -23,7 +23,7 @@ def hook():
         port = 10000
         target_prefix = "dev."
     callback = req["callback_url"]
-    http.request("POST", callable, json.dumps({
+    http.request("POST", callback, json.dumps({
         "state": "success",
         "description": "",
         "context": f"Deploy {branch} branch",
