@@ -23,12 +23,12 @@ def hook():
         port = 10000
         target_prefix = "dev."
     callback = req["callback_url"]
-    http.request("POST", callback, json.dumps({
+    http.request("POST", callback,  body=json.dumps({
         "state": "success",
         "description": "",
         "context": f"Deploy {branch} branch",
         "target_url": f"https://{target_prefix}yituliu.site"
-    }).encode("utf-8"))
+    }).encode("utf-8"), headers={'Content-Type': 'application/json'})
     Popen(
         f"docker pull zhaozuohong/yituliu-frontend-v2-plus:{tag} && docker stop {name} && docker run -d --rm --name {name} -e PORT={port} -p {port}:{port} zhaozuohong/yituliu-frontend-v2-plus:{tag}", shell=True)
     return (f"callback: {callback}, branch: {branch}")
