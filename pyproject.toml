@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mini-cd"
+version = "0.1.0"
+description = ""
+authors = ["Zhao Zuohong <zhbaor@zhaozuohong.vip>"]
+readme = "README.md"
+packages = [{include = "mini_cd"}]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+bottle = "^0.12.25"
+urllib3 = "^1.26.15"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
