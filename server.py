@@ -21,7 +21,7 @@ def hook():
     }).encode("utf-8"), headers={'Content-Type': 'application/json'})
     if tag == "dev":
         Popen(
-            "docker pull zhaozuohong/yituliu-frontend-v2-plus:dev && docker stop v2plus && docker run -d --rm --name v2plus -e PORT=10000 -p 10000:10000 zhaozuohong/yituliu-frontend-v2-plus:dev", shell=True)
+            "docker pull zhaozuohong/yituliu-frontend-v2-plus:dev && docker rm -f v2plus && docker run -d --rm --name v2plus -e PORT=10000 -p 10000:10000 zhaozuohong/yituliu-frontend-v2-plus:dev", shell=True)
 
     return ("OK")
 
